@@ -14,5 +14,6 @@ RUN pip install --no-cache-dir -r requirements.txt && \
 
 RUN mkdir -p families
 COPY source_family.py target_family.py ./families
+COPY user-config.py .
 
 ENTRYPOINT ["pwb", "scripts/transferbot.py"]
