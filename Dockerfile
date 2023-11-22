@@ -12,4 +12,7 @@ WORKDIR /usr/src/pywikibot
 RUN pip install --no-cache-dir -r requirements.txt && \
     pip install --no-cache-dir .
 
+COPY source_family.py target_family.py ./families/
+COPY user-config.py .
+
 ENTRYPOINT ["pwb", "scripts/transferbot.py"]
