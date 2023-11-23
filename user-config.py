@@ -1,4 +1,5 @@
 from os import environ
+from pywikibot import family
 
 authenticate[environ.get('TARGET_WIKI_HOSTNAME')] = (
     environ.get('TARGET_WIKI_CONSUMER_TOKEN'),
@@ -7,4 +8,4 @@ authenticate[environ.get('TARGET_WIKI_HOSTNAME')] = (
     environ.get('TARGET_WIKI_ACCESS_SECRET'),
 )
 
-usernames[Family("target")]['en']=  environ.get('TARGET_WIKI_USER')
+usernames[family.Family("target")]['en']=  environ.get('TARGET_WIKI_USER')
