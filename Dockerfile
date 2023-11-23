@@ -5,7 +5,7 @@ WORKDIR /usr/src
 RUN apt-get update && \
     apt-get install --no-install-recommends -y git=1:2.39.2-1.1 && \
     rm -rf /var/lib/apt/lists/*
-RUN git clone --depth 1 --branch 8.5.1 https://github.com/wikimedia/pywikibot
+RUN git clone --recursive --depth 1 --branch 8.5.1 https://github.com/wikimedia/pywikibot
 
 WORKDIR /usr/src/pywikibot
 
@@ -15,4 +15,4 @@ RUN pip install --no-cache-dir -r requirements.txt && \
 COPY source_family.py target_family.py ./families/
 COPY user-config.py .
 
-ENTRYPOINT ["pwb", "scripts/transferbot.py"]
+ENTRYPOINT ["/usr/src/pywikibot/pwb.py"]
