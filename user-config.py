@@ -6,3 +6,5 @@ authenticate[environ.get('TARGET_WIKI_HOSTNAME')] = (
     environ.get('TARGET_WIKI_ACCESS_TOKEN'),
     environ.get('TARGET_WIKI_ACCESS_SECRET'),
 )
+
+usernames[Family("target")]['en']=  environ.get('TARGET_WIKI_USER')
